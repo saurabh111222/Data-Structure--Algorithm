@@ -52,6 +52,13 @@ int majorityElement(int a[], int size)
     }
 
 3. Find the number occuring odd number of times
+class Solution:
+    def getOddOccurrence(self, arr, n):
+        temp = arr[0]
+        for i in range(1, n):
+            temp = temp^arr[i]
+        return temp
+
 4. Merge an array of size n into another of size m + n
 5. Rotate an array
 6. Leaders in an array
