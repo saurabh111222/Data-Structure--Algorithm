@@ -1,0 +1,73 @@
+1. Find 2 elements with given sum
+
+from collections import defaultdict
+class Solution:
+	def hasArrayTwoCandidates(self,arr, n, x):
+		mydict =  defaultdict(int)
+		for i in arr:
+		    if i in mydict:
+		        return True
+		    mydict[x-i] = 1
+		return False
+
+2. Majority Element
+int majorityElement(int a[], int size)
+    {
+        //Method 1
+        // unordered_map<int, int> m;
+        // for(int i = 0; i<size; i++){
+        //     m[a[i]]++;
+        // }
+        // for(auto it:m){
+        //     if(it.second > size/2){
+        //         return it.first;
+        //     }
+        // }
+        // return -1;
+        
+        //Method 2
+        int maj_element_index = 0;
+        int count = 1;
+        for(int i = 1; i<size; i++){
+            if(a[maj_element_index] == a[i]){
+                count++;
+            }
+            else{
+                count--;
+            }
+       
+            if(count == 0){
+                maj_element_index = i;
+                count = 1;
+            }
+        }
+        
+        int cnt = 0;
+        for(int i = 0; i<size; i++){
+            if(a[maj_element_index] == a[i]) cnt++;
+        }
+        
+        if(cnt>size/2) return a[maj_element_index];
+        else return -1;
+    }
+
+3. Find the number occuring odd number of times
+4. Merge an array of size n into another of size m + n
+5. Rotate an array
+6. Leaders in an array
+7. Majority element in sorted array
+8. Segregate 0s and 1s in an array
+9. Product array
+10. Find 2 repeating elements
+11. Find the smallest missing number
+12. Find max j-i such that arr[j] > arr[i]
+13. Find subarray with given sum
+14. Find the smallest positive number missing from an unsorted array
+15. Find 2 numbers with odd occurence
+16. Largest subarray with equal number of 0s and 1s
+17. Replace every element with the greatest on right side
+18. Stock buy sell to maximize profit
+19. Find common elements in 3 sorted arrays
+20. Nuts and bolts problem
+21. Trapping rain water
+22. Merge 2 sorted arrays in O(1) space
